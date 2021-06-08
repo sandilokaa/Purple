@@ -4,7 +4,7 @@ from sly import Lexer
 
 # Membangun class Lexer dari SLY, dan membuat kompiler yang membuat operasi aritmatika sederhana.
 
-class BasicLexer(Lexer):
+class PurpleLexer(Lexer):
     tokens = {NAME, NUMBER, STRING, FOR, IF, THEN, TO, ELSE, FUN, EQEQ, ARROW, PRINT}
     literals = {'+', '-', '*', '/', '=', ',', ';', '(', ')'}
     ignore = '\t'
@@ -42,7 +42,7 @@ class BasicLexer(Lexer):
         self.lineno = t.value.count('\n')
 
 if __name__ == '__main__':
-    lexer = BasicLexer()
+    lexer = PurpleLexer()
     env = {}
     while True:
         try:

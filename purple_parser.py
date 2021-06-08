@@ -5,10 +5,10 @@ import purple_lexer
 # Membuat class Basic Parser untuk memperluas Lexer, dengan mengalirkan Token
 #dari BasicLexer ke Token Variabel
 
-class BasicParser(Parser):
+class PurpleParser(Parser):
 
     # Token diteruskan dari lexer ke parser
-    tokens = purple_lexer.BasicLexer.tokens
+    tokens = purple_lexer.PurpleLexer.tokens
 
     precedence = (
         ('left', '+', '-'),
@@ -96,8 +96,8 @@ class BasicParser(Parser):
         return('print', p.expr)
         
 if __name__ == '__main__':
-    lexer = purple_lexer.BasicLexer()
-    parser = BasicParser()
+    lexer = purple_lexer.PurpleLexer()
+    parser = PurpleParser()
     env = {}
 
     while True:

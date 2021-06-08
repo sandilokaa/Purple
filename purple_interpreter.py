@@ -5,7 +5,7 @@ import purple_parser
 #dan berjalan melaluinya dan mengevaluasi operasi aritmatika secara hierarkis. 
 #Proses ini secara rekursif dipanggil berulang kali sampai seluruh pohon dievaluasi dan jawabannya diambil.
 
-class BasicExecute:
+class PurpleExecute:
     def __init__(self, tree, env):
         self.env = env
         result = self.walkTree(tree)
