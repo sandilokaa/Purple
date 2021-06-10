@@ -60,3 +60,12 @@ class PurpleExecute:
             except LookupError:
                 print("Undefined function '%s" % node[1])
                 return 0
+        
+        if node[0] == 'add':
+            return self.walkTree(node[1]) + self.walkTree(node[2])
+        elif node[0] == 'sub':
+            return self.walkTree(node[1]) - self.walkTree(node[2])
+        elif node[0] == 'mul':
+            return self.walkTree(node[1]) * self.walkTree(node[2])
+        elif node[0] == 'div':
+            return int(self.walkTree(node[1]) / self.walkTree(node[2]))
