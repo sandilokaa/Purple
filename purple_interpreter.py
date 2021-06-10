@@ -50,3 +50,13 @@ class PurpleExecute:
         
         if node[0] == 'condition_eqeq':
             return self.walkTree(node[1]) == self.walkTree(node[2])
+
+        if node[0] == 'fun_def':
+            self.env[node[1]] = node[2]
+        
+        if node[0] == 'fun_call':
+            try:
+                return self.walkTree(self.env[node[1]])
+            except LookupError:
+                print("Undefined function '%s" % node[1])
+                return 0
