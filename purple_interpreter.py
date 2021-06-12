@@ -69,3 +69,14 @@ class PurpleExecute:
             return self.walkTree(node[1]) * self.walkTree(node[2])
         elif node[0] == 'div':
             return int(self.walkTree(node[1]) / self.walkTree(node[2]))
+
+        if node[0] == 'var_assign':
+            self.env[node[1]] = self.walkTree(node[2])
+            return node[1]
+        
+        if node[0] == 'var':
+            try:
+                return self.env[node[1]]
+            except LookupError:
+                print("Undefined variable '"+node[1]+"' found!")
+                return 0
