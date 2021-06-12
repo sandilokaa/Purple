@@ -14,6 +14,9 @@ Untuk menjalankan Purple Language ini ikuti langkah-langkah berikut!
 
 Purple Language ini memiliki ekstensi .purple
 
+## Tested On
+ - Windows (Visual Studio Code)
+
 ## Command dalam Purple
 
 | Command |  Purple  | 
