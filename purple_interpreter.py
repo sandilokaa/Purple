@@ -11,7 +11,7 @@ class PurpleExecute:
         result = self.walkTree(tree)
         if result is not None and isinstance(result, int):
             print(result)
-        if isinstance(result, str) and result[0] = '"':
+        if isinstance(result, str) and result[0] == '"':
             print(result)
 
     def walkTree(self, node):
@@ -20,7 +20,7 @@ class PurpleExecute:
         if isinstance(node, str):
             return node
 
-        if none is None:
+        if node is None:
             return None
 
         if node[0] == 'program':
@@ -37,7 +37,7 @@ class PurpleExecute:
             return node[1]
         
         if node[0] == 'print':
-            if node[1][0] = '"':
+            if node[1][0] == '"':
                 print(node[1][1:len(node[1])-1])
             else:
                 return self.walkTree(node[1])
@@ -80,3 +80,34 @@ class PurpleExecute:
             except LookupError:
                 print("Undefined variable '"+node[1]+"' found!")
                 return 0
+
+        if node[0] == 'for_loop':
+            if node[1][0] == 'for_loop_setup':
+                loop_setup = self.walkTree(node[1])
+                loop_count = self.env[loop_setup[0]]
+                loop_limit = loop_setup[1]
+
+                for i in range(loop_count+1, loop_limit+1):
+                    res = self.walkTree(node[2])
+                    if res is not None:
+                        print(res)
+                    self.env[loop_setup[0]] = i
+                
+                del self.env[loop_setup[0]]
+        
+        if node[0] == 'for_loop_setup':
+            return (self.walkTree(node[1]), self.walkTree(node[2]))
+
+if __name__ == '__main__':
+    lexer = purple_lexer.PurpleLexer()
+    parser = purple_parser.PurpleParser()
+    env = {}
+
+    while True:
+        try:
+            text = input('Purple > ')
+        except EOFError:
+            break
+        if text:
+            tree = parser.parse(lexer.tokenize(text))
+            PurpleExecute(tree,env)
