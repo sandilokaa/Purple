@@ -13,6 +13,7 @@ Untuk menjalankan Purple Language ini ikuti langkah-langkah berikut!
  - `git clone https://github.com/sandilokaa/Purple.git`
 
 Purple Language ini memiliki ekstensi .purple
+ - Buka terminal arahkan ke folder `cd .../Purple/`
 
 ## Tested On
  - Windows (Visual Studio Code)
