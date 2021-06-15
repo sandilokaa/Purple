@@ -8,7 +8,7 @@ lexer = purple_lexer.PurpleLexer()
 parser = purple_parser.PurpleParser()
 env = {}
 
-file = open(argv[1])
+file  = open(argv[1])
 text = file.readlines()
 for line in text:
     tree = parser.parse(lexer.tokenize(line))
