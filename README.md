@@ -30,6 +30,6 @@ Purple Language ini memiliki ekstensi .purple
 | EQEQ    | ==       |
 | ARROW   | ->       |
 | FUN     | PRET     |
-| PRINT   | AFDRUNK  |
+| PRINT   | AFDRUK  |
 
 Command dalam Purple Language ini diambil dari bahasa Belanda
