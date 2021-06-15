@@ -7,7 +7,7 @@ from sly import Lexer
 class PurpleLexer(Lexer):
     tokens = {NAME, NUMBER, STRING, FOR, IF, THEN, TO, ELSE, FUN, EQEQ, ARROW, PRINT}
     literals = {'+', '-', '*', '/', '=', ',', ';', '(', ')'}
-    ignore = '\t'
+    ignore = ' \t'
 
 # Menentukan token sebagai ekspresi reguler dan menyimpannya sebagai string
 
