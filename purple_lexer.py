@@ -22,7 +22,7 @@ class PurpleLexer(Lexer):
     PRINT= r'AFDRUK'
 
     NAME = r'[a-zA-Z_][a-zA-Z0-9_]*'
-    STRING = r'\".*?"'
+    STRING = r'\".*?\"'
 
     # Number Token
     @_(r'\d+')
