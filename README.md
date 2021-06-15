@@ -14,6 +14,11 @@ Untuk menjalankan Purple Language ini ikuti langkah-langkah berikut!
 
 Purple Language ini memiliki ekstensi .purple
  - Buka terminal arahkan ke folder `cd .../Purple/`
+ - Ketik command pada terminal `python main.py (namafile).py`
+
+ Contoh: 
+
+`python main.py string.py`
 
 ## Tested On
  - Windows (Visual Studio Code)
